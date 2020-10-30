@@ -1,0 +1,30 @@
+{
+  "name": "comp229-f2020-midterm-dm",
+  "version": "1.0.0",
+  "description": "comp229-f2020-midterm-dm",
+  "main": "server.js",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "cookie-parser": "^1.4.5",
+    "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
+    "mongoose": "^5.10.4",
+    "passport": "^0.4.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimmor/comp229-f2020-midterm-dm.git"
+  },
+  "author": "Dmitriy Morozov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimmor/comp229-f2020-midterm-dm/issues"
+  },
+  "homepage": "https://github.com/dimmor/comp229-f2020-midterm-dm#readme"
+}
