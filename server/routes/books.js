@@ -22,21 +22,15 @@ router.get('/', (req, res, next) => {
   });
 });
 
-//  GET the Book Details page in order to add a new Book
+// GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
 
-    /*****************
-     * ADD CODE HERE *
-     *****************/ 
       res.render('books/details', {title: 'Add Book', books: ""})  
 });
 
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
-
-    /*****************
-     * ADD CODE HERE *
-     *****************/
+    
     let newBook = Book({      
       "Title": req.body.name,      
       "Price": req.body.price, 
@@ -46,7 +40,7 @@ router.post('/add', (req, res, next) => {
   Book.create(newBook, (err, Book) =>{
       if(err)
       {
-        res.end(err);
+        res.end(err.toString());
         return console.error(err);          
       }
       else
