@@ -5,10 +5,8 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <!-- ------------------------ -->
-          <!-- FIX THE ADD BUTTON BELOW -->
-          <!-- ------------------------ -->
-
+          <!-- THE ADD BUTTON  -->
+          
           <% if(typeof displayName == 'string' && displayName) { %>
           <a href="/books/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <% } %>
@@ -35,20 +33,14 @@
                   <td class="text-center"><%= books[count].Author %></td>
                   <td class="text-center"><%= books[count].Genre %></td>
 
-                  <td class="text-center">
-                    <!-- ------------------------ -->
-                    <!-- ADD the EDIT BUTTON HERE -->
-                    <!-- ------------------------ -->
-
+                  <td class="text-center">                    
+                    <!-- THE EDIT BUTTON -->          
                     <a href="/books/edit/<%= books[count]._id %>" class="btn btn-primary btn-sm">
                       <i class="fas fa-pencil-alt"></i> Edit</a>
                   </td>
 
                   <td class="text-center">
-                    <!-- ------------------------ -->
-                    <!-- ADD the DELETE BUTTON HERE -->
-                    <!-- ------------------------ -->
-
+                    <!-- THE DELETE BUTTON  -->
                     <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger btn-sm">
                       <i class="fas fa-trash-alt"></i> Delete</a>
                   </td>

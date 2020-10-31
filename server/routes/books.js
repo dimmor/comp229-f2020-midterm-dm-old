@@ -107,7 +107,6 @@ router.post('/edit/:id', (req, res, next) => {
         else
         {
             //refresh the book list
-            //res.redirect('/book-list');
             res.redirect('/books');            
         }
     });
@@ -129,7 +128,6 @@ router.get('/delete/:id', (req, res, next) => {
       else
       {      
           //refresh the book list
-          //res.redirect('/book-list');
           res.redirect('/books');            
       }
   });
