@@ -27,8 +27,8 @@ router.get('/add', (req, res, next) => {
 
     /*****************
      * ADD CODE HERE *
-     *****************/    
-      res.render('books/add', {title: 'Add Book'})  
+     *****************/ 
+      res.render('books/details', {title: 'Add Book', books: ""})  
 });
 
 // POST process the Book Details page and create a new Book - CREATE
@@ -38,8 +38,7 @@ router.post('/add', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
     let newBook = Book({      
-      "Title": req.body.name,
-      "Description": req.body.description,
+      "Title": req.body.name,      
       "Price": req.body.price, 
       "Author": req.body.author,      
       "Genre": req.body.author      
@@ -53,7 +52,6 @@ router.post('/add', (req, res, next) => {
       else
       {
           //refresh the book list
-          //res.redirect('/book-list');
           res.redirect('/books');             
       }
   });
@@ -62,9 +60,6 @@ router.post('/add', (req, res, next) => {
 // GET the Book Details page in order to edit an existing Book
 router.get('/edit/:id', (req, res, next) => {
 
-    /*****************
-     * ADD CODE HERE *
-     *****************/
     let id = req.params.id;
 
     Book.findById(id, (err, bookToEdit) => {
@@ -84,15 +79,10 @@ router.get('/edit/:id', (req, res, next) => {
 // POST - process the information passed from the details form and update the document
 router.post('/edit/:id', (req, res, next) => {
 
-    /*****************
-     * ADD CODE HERE *
-     *****************/
     let id = req.params.id;
-
     let = updateBook = Book({
         "_id": id,        
-        "Title": req.body.name,
-        "Description": req.body.description,
+        "Title": req.body.name,        
         "Price": req.body.price, 
         "Author": req.body.author,
         "Genre": req.body.author         
@@ -101,8 +91,8 @@ router.post('/edit/:id', (req, res, next) => {
     Book.updateOne({_id: id}, updateBook, (err) => {
         if(err)
         {
-            return console.error(err);
             res.end(err);
+            return console.error(err);            
         }
         else
         {
@@ -115,9 +105,6 @@ router.post('/edit/:id', (req, res, next) => {
 // GET - process the delete by user id
 router.get('/delete/:id', (req, res, next) => {
 
-    /*****************
-     * ADD CODE HERE *
-     *****************/
     let id = req.params.id;
     Book.remove({_id: id}, (err) => {
       if(err)
